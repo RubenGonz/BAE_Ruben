@@ -8,7 +8,7 @@ Un archivo o fichero es el lugar donde se almacena una informacion que esta comp
 
 **Tipos de ficheros.**
 
-Hay muchos tipos de archivos y una forma sencilla de reconocerlos es por su extension, por ejemplo el archivo terminadoen ".txt" es un archivo que almacena texto. Otro tipo es ".gif" o ".mp4" que son de imagen y audio.
+Hay muchos tipos de archivos y una forma sencilla de reconocerlos es por su extension, por ejemplo el archivo terminado en ".txt" es un archivo que almacena texto. Otro tipo es ".gif" o ".mp4" que son de imagen y audio.
 
 **Define brevemente los conceptos de registro y campo.**
 
