@@ -1,0 +1,20 @@
+CREATE DATABASE Ventas
+USE Ventas;
+
+CREATE TABLE Clientes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  Nombre VARCHAR(25) NOT NULL,
+  Primer_apellido VARCHAR(25) NOT NULL,
+  Ciudad VARCHAR(100) NOT NULL,
+  Genero,
+  id_comercial FOREIGN KEY
+)
+
+CREATE TABLE Comercial(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  Nombre VARCHAR(25) NOT NULL,
+  Apellido_1 VARCHAR(25) NOT NULL,
+  Apellido_2 VARCHAR(25) NOT NULL,
+  Ciudad VARCHAR(100) NOT NULL,
+  Comision FLOAT,
+)
