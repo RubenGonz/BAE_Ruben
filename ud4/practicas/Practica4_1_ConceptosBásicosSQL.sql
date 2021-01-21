@@ -907,7 +907,7 @@ INSERT INTO Pagos VALUES (38,'PayPal','ak-std-000026','2006-05-26',1171);
 
 --Listar las bases de datos para comprobar que está la base de datos jardineria entre ellas.
 
-
+SHOW DATABASES;
 
 --Mostrar las tablas que componen la base de datos jardineria
 
@@ -915,11 +915,18 @@ SHOW TABLES FROM jardineria;
 
 --Mostrar los campos que componen la tabla clientes
 
-SELECT * FROM clientes;
+SHOW COLUMNS FROM Clientes;
 
 --Realizar el mismo proceso del punto anterior con todas las tablas de la base de datos.
 
-
+SHOW COLUMNS FROM Clientes;
+SHOW COLUMNS FROM DetallePedidos;
+SHOW COLUMNS FROM Empleados;
+SHOW COLUMNS FROM GamasProductos;
+SHOW COLUMNS FROM Oficinas;
+SHOW COLUMNS FROM Pagos;
+SHOW COLUMNS FROM Pedidos;
+SHOW COLUMNS FROM Productos;
 
 --Mostrar todos los clientes de la base de datos.
 
