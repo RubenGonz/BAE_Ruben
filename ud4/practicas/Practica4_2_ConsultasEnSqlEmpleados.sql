@@ -1,66 +1,3 @@
-create database Empleados;
-use Empleados;
-
-create table emple
-
-	(emp_no 	INTEGER PRIMARY KEY,
-
-	apellido VARCHAR(50) NOT NULL,
-
-	oficio VARCHAR(30),
-
-	dir INTEGER,
-
-	fecha_alt DATE,
-
-	salario INTEGER,
-
-	comision INTEGER,
-
-	dept_no INTEGER);
-
-create table depart(
-
-        dept_no INTEGER,
-
-	dnombre VARCHAR(30),
-
-	loc VARCHAR(30));
-
-INSERT INTO emple VALUES (7369,'SANCHEZ','EMPLEADO',7902,'1980/12/17',
-                        104000,NULL,20);
-INSERT INTO emple VALUES (7499,'ARROYO','VENDEDOR',7698,'1980/02/20',
-                        208000,39000,30);
-INSERT INTO emple VALUES (7521,'SALA','VENDEDOR',7698,'1981/02/22',
-                        162500,162500,30);
-INSERT INTO emple VALUES (7566,'JIMENEZ','DIRECTOR',7839,'1981/04/02',
-                        386750,NULL,20);
-INSERT INTO emple VALUES (7654,'MARTIN','VENDEDOR',7698,'1981/09/29',
-                        162500,182000,30);
-INSERT INTO emple VALUES (7698,'NEGRO','DIRECTOR',7839,'1981/05/01',
-                        370500,NULL,30);
-INSERT INTO emple VALUES (7788,'GIL','ANALISTA',7566,'1981/11/09',
-                        390000,NULL,20);
-INSERT INTO emple VALUES (7839,'REY','PRESIDENTE',NULL,'1981/11/17',
-                        650000,NULL,10);
-INSERT INTO emple VALUES (7844,'TOVAR','VENDEDOR',7698,'1981/09/08',
-                        195000,0,30);
-INSERT INTO emple VALUES (7876,'ALONSO','EMPLEADO',7788,'1981/09/23',
-                        143000,NULL,20);
-INSERT INTO emple VALUES (7900,'JIMENO','EMPLEADO',7698,'1981/12/03',
-                        1235000,NULL,30);
-INSERT INTO emple VALUES (7902,'FERNANDEZ','ANALISTA',7566,'1981/12/03',
-                        390000,NULL,20);
-INSERT INTO emple VALUES (7934,'MUÑOZ','EMPLEADO',7782,'1982/01/23',
-                        169000,NULL,10);
-
-INSERT INTO depart VALUES (10,'CONTABILIDAD','SEVILLA');
-INSERT INTO depart VALUES (20,'INVESTIGACIÓN','MADRID');
-INSERT INTO depart VALUES (30,'VENTAS','BARCELONA');
-INSERT INTO depart VALUES (40,'PRODUCCIÓN','BILBAO');
-
-
-
 -- Realizar las siguientes consultas:
 
 --1 Mostrar el apellido, oficio y número de departamento de cada empleado.
@@ -157,20 +94,24 @@ SELECT * FROM emple WHERE oficio='EMPLEADO' AND salario>'100000' AND dept_no='10
 
 --25. Mostrar los apellidos de los empleados que no tengan comisión.
 
-SELECT apellido FROM emple WHERE comision IS 'NULL';
+SELECT apellido FROM emple WHERE comision IS NULL;
 
 --26. Mostrar los apellidos de los empleados que no tengan comisión y cuyo apellido empiece por ʻJʼ.
 
-
+SELECT apellido FROM emple WHERE comision IS NULL AND apellido LIKE 'J%';
 
 --27. Mostrar los apellidos de los empleados cuyo oficio sea ʻVENDEDORʼ, ʻANALISTAʼ o ʻEMPLEADOʼ.
 
-
+SELECT apellido FROM emple WHERE oficio='VENDEDOR' OR oficio='ANALISTA' OR oficio='EMPLEADO';
  
 --28. Mostrar los apellidos de los empleados cuyo oficio no sea ni ʻANALISTAʼ ni ʻEMPLEADOʼ, y además tengan un salario mayor de 200000.
 
+SELECT apellido FROM emple WHERE oficio NOT IN('VENDEDOR','ANALISTA','EMPLEADO') AND salario>200000;
 
 --29 Seleccionar de la tabla EMPLE los empleados cuyo salario esté entre 2000000 y 3000000 (utilizar BETWEEN).
 
+SELECT * FROM emple WHERE salario BETWEEN 2000000 AND 3000000;
 
 --30 Seleccionar el apellido, salario y número de departamento de los empleados cuyo salario sea mayor que 200000 en los departamentos 10 ó 30.
+
+SELECT apellido, salario, dept_no FROM emple WHERE dept_no='10' OR dept_no='30' AND salario>200000;
