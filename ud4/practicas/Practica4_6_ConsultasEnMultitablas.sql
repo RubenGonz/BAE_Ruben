@@ -1,18 +1,18 @@
 --1. Averigua el DNI de todos los clientes. 
 
-select dni from cliente;
+SELECT dni FROM cliente;
 
 --2. Consulta todos los datos de todos los programas. 
 
-select * from programa;
+SELECT * FROM programa;
 
 --3. Obtén un listado con los nombres de todos los programas. 
 
-select nombre from programa;
+SELECT nombre FROM programa;
 
 --4. Genera una lista con todos los comercios. 
 
-select * from comercio;
+SELECT * FROM comercio;
 
 --5. Genera una lista de las ciudades con establecimientos donde se venden programas, sin que aparezcan valores duplicados (utiliza DISTINCT). 
 
